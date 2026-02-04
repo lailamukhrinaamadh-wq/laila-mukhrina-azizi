@@ -1,114 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Portfolio | Laila Mukhrina Azizi</title>
+  <meta charset="UTF-8">
+  <title>Portfolio | Laila Mukhrina Azizi</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff1eb;
-  color: #3a2c2c;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff1e6; /* soft peach */
+      color: #333;
+    }
 
-.section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
 
-.center {
-  text-align: center;
-}
+    /* GRID */
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+    }
 
-.profile-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 6px 6px 0 #000;
-}
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-  margin-top: 30px;
-}
+    /* CARD */
+    .card {
+      background: #ffe3d6;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 6px 6px 0 #000;
+    }
 
-.card {
-  background: #ffe1d6;
-  padding: 24px;
-  border-radius: 20px;
-  box-shadow: 6px 6px 0 #000;
-}
+    .center {
+      text-align: center;
+    }
 
-.card h3 {
-  margin-top: 0;
-}
-</style>
+    .clickable {
+      cursor: pointer;
+    }
+
+    /* PROFILE IMAGE */
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- PROFIL -->
-<section class="section center">
-  <div class="card" style="display:inline-block;">
-    <img src="profile.jpg" alt="Foto Laila" class="profile-img">
-    <h1>Laila Mukhrina Azizi</h1>
-    <p>
-      Lulusan Statistika dengan minat yang kuat pada
-      Data Analisis dan Data Science.
-    </p>
-  </div>
-</section>
-
-
-<!-- SOSIAL MEDIA -->
 <section class="section">
-  <h2>Sosial Media</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>LinkedIn</h3>
-      <p>linkedin.com/in/username</p>
+
+  <!-- BARIS ATAS -->
+  <div class="card-grid-3">
+
+    <!-- CARD 1 -->
+    <div class="card center">
+      <h2>Hello 👋</h2>
+      <p>I'm <strong>Laila Mukhrina Azizi</strong></p>
     </div>
-    <div class="card">
-      <h3>GitHub</h3>
-      <p>github.com/username</p>
+
+    <!-- CARD 2 -->
+    <div class="card center clickable" onclick="toggleProfile()">
+      <img src="profile.jpeg" class="profile-img" alt="Foto Laila">
+
+      <div id="profileText" style="display:none;">
+        <h3>Laila Mukhrina Azizi</h3>
+        <p>
+          Lulusan Statistika dengan minat kuat pada
+          Data Analysis dan Data Science.
+        </p>
+      </div>
+
+      <small>Klik foto 👆</small>
     </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <h3>Social Media</h3>
+      <p>
+        🔗 <a href="https://linkedin.com" target="_blank">LinkedIn</a><br><br>
+        💻 <a href="https://github.com" target="_blank">GitHub</a>
+      </p>
+    </div>
+
   </div>
+
+  <!-- BARIS BAWAH -->
+  <div class="card-grid-2">
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <h3>Tools</h3>
+      <ul>
+        <li>Python</li>
+        <li>Excel</li>
+        <li>SQL</li>
+        <li>Tableau</li>
+      </ul>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+      <h3>Projects</h3>
+      <ul>
+        <li>Excel Dashboard</li>
+        <li>SQL Analysis</li>
+        <li>Python Data Analysis</li>
+        <li>Tableau Visualization</li>
+      </ul>
+    </div>
+
+  </div>
+
 </section>
 
-<!-- TOOLS -->
-<section class="section">
-  <h2>Tools</h2>
-  <div class="cards">
-    <div class="card">Excel</div>
-    <div class="card">Python</div>
-    <div class="card">SQL</div>
-    <div class="card">Tableau</div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section">
-  <h2>Projects</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Excel Project</h3>
-      <p>Dashboard & Pivot Table</p>
-    </div>
-    <div class="card">
-      <h3>Python Project</h3>
-      <p>Data Analysis</p>
-    </div>
-    <div class="card">
-      <h3>SQL Project</h3>
-      <p>Query & Analysis</p>
-    </div>
-  </div>
-</section>
+<script>
+  function toggleProfile() {
+    const text = document.getElementById("profileText");
+    if (text.style.display === "none") {
+      text.style.display = "block";
+    } else {
+      text.style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
