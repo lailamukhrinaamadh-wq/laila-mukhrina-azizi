@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio | Laila Mukhrina Amadh</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #faf7fb;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+header p {
+  max-width: 600px;
+  margin: auto;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: #fde2e4;
+  padding: 24px;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #000;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translate(-5px, -5px);
+}
+
+.excel { background: #fde2e4; }
+.python { background: #e2f0cb; }
+.sql { background: #e4dbff; }
+.tableau { background: #fff1c1; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Laila Mukhrina Amadh</h1>
+  <p>
+    Fresh graduate dengan minat pada data analysis
+    menggunakan Excel, Python, SQL, dan Tableau.
+  </p>
+</header>
+
+<div class="projects">
+  <div class="card excel"
+    onclick="window.open('https://github.com','_blank')">
+    <h3>Excel Project</h3>
+    <p>Dashboard & Pivot Table</p>
+  </div>
+
+  <div class="card python"
+    onclick="window.open('https://github.com','_blank')">
+    <h3>Python Project</h3>
+    <p>Data Analysis</p>
+  </div>
+
+  <div class="card sql"
+    onclick="window.open('https://github.com','_blank')">
+    <h3>SQL Project</h3>
+    <p>Query & Analysis</p>
+  </div>
+
+  <div class="card tableau"
+    onclick="window.open('https://public.tableau.com','_blank')">
+    <h3>Tableau Project</h3>
+    <p>Interactive Dashboard</p>
+  </div>
+</div>
+
+</body>
+</html>
