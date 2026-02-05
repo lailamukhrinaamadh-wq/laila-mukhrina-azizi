@@ -5,7 +5,80 @@
 <title>Portfolio | Laila Mukhrina Azizi</title>
 
 <style>
-body {
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: 280px;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .icon-grid img {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .section {
+    padding: 40px 16px;
+  }
+
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: 260px;
+    border-radius: 22px;
+  }
+
+  .overlay {
+    padding: 20px;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .icon-grid img {
+    width: 95px;
+    height: 95px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.body {
   margin: 0;
   background: #fff1e8;
   font-family: Georgia, serif;
