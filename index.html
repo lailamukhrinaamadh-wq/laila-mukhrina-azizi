@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #fff1e6; /* soft peach */
+      background: #fff1e8;
       color: #333;
     }
 
@@ -19,14 +19,14 @@
     }
 
     /* GRID */
-    .card-grid-3 {
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
       margin-bottom: 40px;
     }
 
-    .card-grid-2 {
+    .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
@@ -34,27 +34,39 @@
 
     /* CARD */
     .card {
-      background: #ffe3d6;
+      background: #ffe4d6;
       border-radius: 20px;
-      padding: 25px;
+      padding: 30px;
       box-shadow: 6px 6px 0 #000;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
     }
 
     .center {
       text-align: center;
     }
 
-    .clickable {
-      cursor: pointer;
+    /* FOTO CARD */
+    .photo-card {
+      background-image: url("profile.jpg");
+      background-size: cover;
+      background-position: center;
+      min-height: 240px;
+      position: relative;
+      padding: 0;
     }
 
-    /* PROFILE IMAGE */
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 228, 214, 0.92);
+      border-radius: 20px;
+      padding: 30px;
+      display: none;
     }
 
     ul {
@@ -62,13 +74,8 @@
     }
 
     a {
-      color: #333;
+      color: #000;
       text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -77,8 +84,8 @@
 
 <section class="section">
 
-  <!-- BARIS ATAS -->
-  <div class="card-grid-3">
+  <!-- BARIS PERTAMA -->
+  <div class="grid-3">
 
     <!-- CARD 1 -->
     <div class="card center">
@@ -86,19 +93,16 @@
       <p>I'm <strong>Laila Mukhrina Azizi</strong></p>
     </div>
 
-    <!-- CARD 2 -->
-    <div class="card center clickable" onclick="toggleProfile()">
-      <img src="profile.jpeg" class="profile-img" alt="Foto Laila">
-
-      <div id="profileText" style="display:none;">
+    <!-- CARD 2 FOTO -->
+    <div class="card photo-card" onclick="toggleProfile()">
+      <div class="photo-overlay" id="profileText">
         <h3>Laila Mukhrina Azizi</h3>
         <p>
           Lulusan Statistika dengan minat kuat pada
           Data Analysis dan Data Science.
         </p>
+        <small>Klik lagi untuk menutup</small>
       </div>
-
-      <small>Klik foto 👆</small>
     </div>
 
     <!-- CARD 3 -->
@@ -112,8 +116,8 @@
 
   </div>
 
-  <!-- BARIS BAWAH -->
-  <div class="card-grid-2">
+  <!-- BARIS KEDUA -->
+  <div class="grid-2">
 
     <!-- CARD 4 -->
     <div class="card">
@@ -142,14 +146,11 @@
 </section>
 
 <script>
-  function toggleProfile() {
-    const text = document.getElementById("profileText");
-    if (text.style.display === "none") {
-      text.style.display = "block";
-    } else {
-      text.style.display = "none";
-    }
-  }
+function toggleProfile() {
+  const text = document.getElementById("profileText");
+  text.style.display =
+    text.style.display === "block" ? "none" : "block";
+}
 </script>
 
 </body>
