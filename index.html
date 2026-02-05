@@ -1,136 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio - Laila Mukhrina Azizi</title>
+<meta charset="UTF-8">
+<title>Portfolio | Laila Mukhrina Azizi</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #fff2e8;
-    }
+<style>
+body {
+  margin: 0;
+  background: #fff1e8;
+  font-family: Georgia, serif;
+}
 
-    .section {
-      padding: 60px;
-    }
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    /* GRID */
-    .card-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 40px;
-    }
+/* GRID */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
 
-    .card-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
 
-    /* CARD */
-    .card {
-      background: #ffe6d6;
-      padding: 30px;
-      border-radius: 24px;
-      box-shadow: 6px 6px 0 #000;
-    }
+/* CARD */
+.card {
+  height: 300px;
+  border-radius: 28px;
+  box-shadow: 6px 6px 0 #000;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
 
-    .center {
-      text-align: center;
-    }
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 228, 214, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
 
-    /* FOTO CARD */
-    .photo-card {
-      height: 260px;
-      background-image: url("Ayin.jpeg");
-      background-size: cover;
-      background-position: center;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
+/* MUNCUL SAAT KLIK */
+.card.active .overlay {
+  opacity: 1;
+}
 
-    .photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 230, 214, 0.95);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      opacity: 0;
-      transition: 0.3s ease;
-      padding: 20px;
-    }
-
-    .photo-card.active .photo-overlay {
-      opacity: 1;
-    }
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
-  </style>
+/* CARD KHUSUS */
+.hello .overlay {
+  opacity: 1;
+  background: rgba(255, 228, 214, 0.85);
+  cursor: default;
+}
+</style>
 </head>
 
 <body>
 
 <section class="section">
 
-  <!-- BARIS 1 -->
-  <div class="card-grid-3">
+  <!-- BARIS PERTAMA -->
+  <div class="grid-3">
 
-    <div class="card center">
-      <h2>Hello 👋</h2>
-      <p>I'm <strong>Laila Mukhrina Azizi</strong></p>
-    </div>
-
-    <!-- FOTO -->
-    <div class="card photo-card" onclick="toggleProfile(this)">
-      <div class="photo-overlay">
+    <!-- CARD 1 : PROFILE -->
+    <div class="card" style="background-image: url('profile.jpeg')" onclick="toggle(this)">
+      <div class="overlay">
         <h3>Laila Mukhrina Azizi</h3>
         <p>
-          Lulusan Statistika dengan minat kuat pada
-          Data Analysis dan Data Science.
+          Lulusan Statistika dengan minat kuat pada<br>
+          Data Analyst dan Data Scientist
         </p>
       </div>
     </div>
 
-    <div class="card">
-      <h3>Social Media</h3>
-      <p>
-        🔗 <a href="#">LinkedIn</a><br>
-        💻 <a href="#">GitHub</a>
-      </p>
+    <!-- CARD 2 : HELLO -->
+    <div class="card hello" style="background-image: url('Card 1.jpg')">
+      <div class="overlay">
+        <h2>Hello 👋</h2>
+        <h3>I'm Laila Mukhrina Azizi</h3>
+      </div>
+    </div>
+
+    <!-- CARD 3 : SOCIAL -->
+    <div class="card" style="background-image: url('Sosial Media.jpg')" onclick="toggle(this)">
+      <div class="overlay">
+        <h3>Social Media</h3>
+        <p>
+          LinkedIn<br>
+          GitHub
+        </p>
+      </div>
     </div>
 
   </div>
 
-  <!-- BARIS 2 -->
-  <div class="card-grid-2">
+  <!-- BARIS KEDUA -->
+  <div class="grid-2">
 
-    <div class="card">
-      <h3>Tools</h3>
-      <ul>
-        <li>Python</li>
-        <li>Excel</li>
-        <li>SQL</li>
-        <li>Tableau</li>
-      </ul>
+    <!-- CARD 4 : TOOLS -->
+    <div class="card" style="background-image: url('Tools.jpg')" onclick="toggle(this)">
+      <div class="overlay">
+        <h3>Tools</h3>
+        <p>
+          Python<br>
+          Excel<br>
+          SQL<br>
+          Tableau
+        </p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>Projects</h3>
-      <ul>
-        <li>Excel Dashboard</li>
-        <li>SQL Analysis</li>
-        <li>Python Data Analysis</li>
-        <li>Tableau Visualization</li>
-      </ul>
+    <!-- CARD 5 : PROJECT -->
+    <div class="card" style="background-image: url('Project.jpg')" onclick="toggle(this)">
+      <div class="overlay">
+        <h3>Projects</h3>
+        <p>
+          Excel Dashboard<br>
+          SQL Analysis<br>
+          Python Data Analysis<br>
+          Tableau Visualization
+        </p>
+      </div>
     </div>
 
   </div>
@@ -138,9 +145,9 @@
 </section>
 
 <script>
-  function toggleProfile(card) {
-    card.classList.toggle("active");
-  }
+function toggle(card) {
+  card.classList.toggle("active");
+}
 </script>
 
 </body>
