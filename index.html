@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio | Laila Mukhrina Azizi</title>
+  <title>Portfolio - Laila Mukhrina Azizi</title>
 
   <style>
     body {
       margin: 0;
-      font-family: Montserrat, Open Sans;
-      background: #fff1e8;
-      color: #333;
+      font-family: Georgia, serif;
+      background: #fff2e8;
     }
 
     .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+      padding: 60px;
     }
 
     /* GRID */
-    .grid-3 {
+    .card-grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
       margin-bottom: 40px;
     }
 
-    .grid-2 {
+    .card-grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
@@ -34,16 +31,10 @@
 
     /* CARD */
     .card {
-      background: #ffe4d6;
-      border-radius: 20px;
+      background: #ffe6d6;
       padding: 30px;
+      border-radius: 24px;
       box-shadow: 6px 6px 0 #000;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
     }
 
     .center {
@@ -52,30 +43,36 @@
 
     /* FOTO CARD */
     .photo-card {
-      background-image: url("profile.jpg");
+      height: 260px;
+      background-image: url("profile.jpeg");
       background-size: cover;
       background-position: center;
-      min-height: 240px;
+      cursor: pointer;
       position: relative;
-      padding: 0;
+      overflow: hidden;
     }
 
     .photo-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(255, 228, 214, 0.92);
-      border-radius: 20px;
-      padding: 30px;
-      display: none;
+      background: rgba(255, 230, 214, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      transition: 0.3s ease;
+      padding: 20px;
     }
 
-    ul {
-      padding-left: 18px;
+    .photo-card.active .photo-overlay {
+      opacity: 1;
     }
 
     a {
-      color: #000;
       text-decoration: none;
+      color: black;
     }
   </style>
 </head>
@@ -84,41 +81,39 @@
 
 <section class="section">
 
-  <!-- BARIS PERTAMA -->
-  <div class="grid-3">
+  <!-- BARIS 1 -->
+  <div class="card-grid-3">
 
-    <!-- CARD 1 -->
     <div class="card center">
       <h2>Hello 👋</h2>
       <p>I'm <strong>Laila Mukhrina Azizi</strong></p>
     </div>
 
-    <!-- CARD 2 FOTO -->
-    <div class="card photo-card" onclick="toggleProfile()">
-      <div class="photo-overlay" id="profileText">
+    <!-- FOTO -->
+    <div class="card photo-card" onclick="toggleProfile(this)">
+      <div class="photo-overlay">
         <h3>Laila Mukhrina Azizi</h3>
         <p>
           Lulusan Statistika dengan minat kuat pada
           Data Analysis dan Data Science.
         </p>
+        <small>Klik lagi untuk menutup</small>
       </div>
     </div>
 
-    <!-- CARD 3 -->
     <div class="card">
       <h3>Social Media</h3>
       <p>
-        🔗 <a href="https://linkedin.com" target="_blank">LinkedIn</a><br><br>
-        💻 <a href="https://github.com" target="_blank">GitHub</a>
+        🔗 <a href="#">LinkedIn</a><br>
+        💻 <a href="#">GitHub</a>
       </p>
     </div>
 
   </div>
 
-  <!-- BARIS KEDUA -->
-  <div class="grid-2">
+  <!-- BARIS 2 -->
+  <div class="card-grid-2">
 
-    <!-- CARD 4 -->
     <div class="card">
       <h3>Tools</h3>
       <ul>
@@ -129,7 +124,6 @@
       </ul>
     </div>
 
-    <!-- CARD 5 -->
     <div class="card">
       <h3>Projects</h3>
       <ul>
@@ -145,11 +139,9 @@
 </section>
 
 <script>
-function toggleProfile() {
-  const text = document.getElementById("profileText");
-  text.style.display =
-    text.style.display === "block" ? "none" : "block";
-}
+  function toggleProfile(card) {
+    card.classList.toggle("active");
+  }
 </script>
 
 </body>
