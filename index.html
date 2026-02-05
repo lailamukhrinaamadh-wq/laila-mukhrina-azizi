@@ -37,18 +37,17 @@ body {
   border-radius: 28px;
   box-shadow: 6px 6px 0 #000;
   background-size: cover;
-  background-position: 50% 80%; /* FOKUS KE BAWAH */
+  background-position: 50% 80%;
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
-
 /* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 228, 214, 0.88);
+  background: rgba(255, 228, 214, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,15 +58,45 @@ body {
   transition: 0.3s ease;
 }
 
-/* AKTIF KLIK */
 .card.active .overlay {
   opacity: 1;
 }
 
-/* HELLO CARD SELALU TAMPIL */
+/* HELLO CARD */
 .hello .overlay {
   opacity: 1;
   cursor: default;
+}
+
+/* ICON GRID */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icon-grid img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+.icon-grid img:hover {
+  transform: scale(1.15);
+}
+
+/* PROJECT LIST */
+.project-list a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  margin: 6px 0;
+}
+
+.project-list a:hover {
+  text-decoration: underline;
 }
 </style>
 </head>
@@ -79,7 +108,7 @@ body {
   <!-- BARIS 1 -->
   <div class="grid-3">
 
-    <!-- CARD 1 : FOTO PROFILE -->
+    <!-- PROFILE -->
     <div class="card"
          style="background-image: url('Ayin.jpeg')"
          onclick="toggle(this)">
@@ -92,7 +121,7 @@ body {
       </div>
     </div>
 
-    <!-- CARD 2 : HELLO -->
+    <!-- HELLO -->
     <div class="card hello"
          style="background-image: url('Card 1.jpg')">
       <div class="overlay">
@@ -101,16 +130,24 @@ body {
       </div>
     </div>
 
-    <!-- CARD 3 : SOCIAL MEDIA -->
+    <!-- SOCIAL MEDIA -->
     <div class="card"
          style="background-image: url('Sosial Media.jpg')"
          onclick="toggle(this)">
       <div class="overlay">
         <h3>Social Media</h3>
-        <p>
-          LinkedIn<br>
-          GitHub
-        </p>
+
+        <div class="icon-grid">
+          <a href="https://linkedin.com/in/laila-mukhrina-azizi" target="_blank">
+            <img src="linkedin.png">
+          </a>
+          <a href="https://github.com/lailamukhrinaamadh-wq" target="_blank">
+            <img src="github.png">
+          </a>
+          <a href="https://instagram.com/laila_mukhrina_azizi" target="_blank">
+            <img src="instagram.jpg">
+          </a>
+        </div>
       </div>
     </div>
 
@@ -119,33 +156,35 @@ body {
   <!-- BARIS 2 -->
   <div class="grid-2">
 
-    <!-- CARD 4 : TOOLS -->
-    <div class="card"
-         style="background-image: url('Project.jpg')"
-         onclick="toggle(this)">
-      <div class="overlay">
-        <h3>Tools</h3>
-        <p>
-          Python<br>
-          Excel<br>
-          SQL<br>
-          Tableau
-        </p>
-      </div>
-    </div>
-
-    <!-- CARD 5 : PROJECT -->
+    <!-- TOOLS -->
     <div class="card"
          style="background-image: url('Tools.jpg')"
          onclick="toggle(this)">
       <div class="overlay">
+        <h3>Tools</h3>
+
+        <div class="icon-grid">
+          <img src="python.jpg">
+          <img src="excel.jpg">
+          <img src="sql.png">
+          <img src="tableau.png">
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card"
+         style="background-image: url('Project.jpg')"
+         onclick="toggle(this)">
+      <div class="overlay">
         <h3>Projects</h3>
-        <p>
-          Excel Dashboard<br>
-          SQL Analysis<br>
-          Python Data Analysis<br>
-          Tableau Visualization
-        </p>
+
+        <div class="project-list">
+          <a href="#" target="_blank">Excel Dashboard</a>
+          <a href="#" target="_blank">SQL Analysis</a>
+          <a href="#" target="_blank">Python Data Analysis</a>
+          <a href="#" target="_blank">Tableau Visualization</a>
+        </div>
       </div>
     </div>
 
