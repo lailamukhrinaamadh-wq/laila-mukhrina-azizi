@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,6 +5,7 @@
 <title>Portfolio | Laila Mukhrina Azizi</title>
 
 <style>
+/* ================= BASE ================= */
 body {
   margin: 0;
   background: #fff1e8;
@@ -18,7 +18,7 @@ body {
   padding: 60px 20px;
 }
 
-/* ================= GRID ================= */
+/* ================= GRID DESKTOP ================= */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -38,7 +38,7 @@ body {
   border-radius: 28px;
   box-shadow: 6px 6px 0 #000;
   background-size: cover;
-  background-position: 50% 80%;
+  background-position: center;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -76,8 +76,8 @@ body {
 }
 
 .icon-grid img {
-  width: 85px;
-  height: 85px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   transition: 0.25s ease;
   filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.25));
@@ -91,21 +91,24 @@ body {
 .project-grid {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   margin-top: 18px;
   width: 100%;
-  max-width: 260px;
+  max-width: 320px;
 }
 
 .project-item {
   background: #fff;
-  padding: 10px 14px;
-  border-radius: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
   text-decoration: none;
   color: #000;
-  font-weight: 500;
-  box-shadow: 2px 2px 0 #000;
+  font-weight: 600;
+  box-shadow: 3px 3px 0 #000;
   transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .project-item:hover {
@@ -113,9 +116,17 @@ body {
   transform: translateY(-2px);
 }
 
-/* ================= RESPONSIVE ================= */
+.project-desc {
+  font-size: 13px;
+  font-weight: normal;
+}
 
-/* TABLET */
+.project-status {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ================= TABLET ================= */
 @media (max-width: 1024px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
@@ -128,22 +139,39 @@ body {
   }
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
+  .grid-3,
+  .grid-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .order-1 { order: 1; }
+  .order-2 { order: 2; }
+  .order-3 { order: 3; }
+  .order-4 { order: 4; }
+  .order-5 { order: 5; }
+
   .section {
     padding: 40px 16px;
   }
-  .grid-3,
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
+
   .card {
     height: 260px;
     border-radius: 22px;
   }
+
   .icon-grid img {
-    width: 90px;
-    height: 90px;
+    width: 95px;
+    height: 95px;
+  }
+
+  .hello .overlay {
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
@@ -157,7 +185,7 @@ body {
   <div class="grid-3">
 
     <!-- PROFILE -->
-    <div class="card" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
+    <div class="card order-2" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Laila Mukhrina Azizi</h3>
         <p>Lulusan Statistika dengan minat kuat pada<br>Data Analyst dan Data Scientist</p>
@@ -165,7 +193,7 @@ body {
     </div>
 
     <!-- HELLO -->
-    <div class="card hello" style="background-image:url('Card 1.jpg')">
+    <div class="card hello order-1" style="background-image:url('Card 1.jpg')">
       <div class="overlay">
         <h2>Hello 👋</h2>
         <h3>I'm Laila Mukhrina Azizi</h3>
@@ -173,10 +201,9 @@ body {
     </div>
 
     <!-- SOCIAL -->
-    <div class="card" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
+    <div class="card order-3" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Social Media</h3>
-
         <div class="icon-grid">
           <a href="https://linkedin.com/in/laila-mukhrina-azizi" target="_blank"><img src="linkedin.png"></a>
           <a href="https://github.com/lailamukhrinaamadh-wq" target="_blank"><img src="github.png"></a>
@@ -193,7 +220,7 @@ body {
   <div class="grid-2">
 
     <!-- TOOLS -->
-    <div class="card" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
+    <div class="card order-4" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Tools</h3>
         <div class="icon-grid">
@@ -208,40 +235,38 @@ body {
     </div>
 
     <!-- PROJECT -->
-<div class="card" style="background-image:url('Project.jpg')" onclick="toggle(this)">
-  <div class="overlay">
-    <h3>Projects</h3>
+    <div class="card order-5" style="background-image:url('Project.jpg')" onclick="toggle(this)">
+      <div class="overlay">
+        <h3>Projects</h3>
 
-    <div class="project-grid">
+        <div class="project-grid">
 
-      <!-- Excel -->
-      <a href="https://docs.google.com/spreadsheets/d/1stkiLDjiWF14rFneueKss5zTbByvVkNNM_Kf84YT-Kc/edit?usp=sharing" target="_blank" class="project-item">
-        📊 Excel Dashboard
-        <span class="project-desc">Interactive sales & data report</span>
-      </a>
+          <a href="https://docs.google.com/spreadsheets/d/1stkiLDjiWF14rFneueKss5zTbByvVkNNM_Kf84YT-Kc/edit?usp=sharing" target="_blank" class="project-item">
+            📊 Excel Dashboard
+            <span class="project-desc">Interactive sales & data report</span>
+          </a>
 
-      <!-- SQL -->
-      <a href="LINK_SQL" target="_blank" class="project-item">
-        🗄 SQL Data Analysis
-        <span class="project-desc">Querying & insight generation</span>
-      </a>
+          <a href="#" target="_blank" class="project-item">
+            🗄 SQL Data Analysis
+            <span class="project-desc">Querying & insight generation</span>
+          </a>
 
-      <!-- PYTHON (BELUM PUBLISH) -->
-      <div class="project-item">
-        🧠 Python Research Project
-        <span class="project-desc">Tomato Leaf Disease Detection</span>
-        <span class="project-status">Status: Under Review</span>
+          <div class="project-item">
+            🧠 Python Research Project
+            <span class="project-desc">Tomato Leaf Disease Detection</span>
+            <span class="project-status">Status: Under Review</span>
+          </div>
+
+          <a href="https://public.tableau.com/views/IndikatorKemiskinankita/Story1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link" target="_blank" class="project-item">
+            📈 Tableau Visualization
+            <span class="project-desc">Interactive visual dashboard</span>
+          </a>
+
+        </div>
       </div>
-
-      <!-- TABLEAU -->
-      <a href="https://public.tableau.com/views/IndikatorKemiskinankita/Story1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link" target="_blank" class="project-item">
-        📈 Tableau Visualization
-        <span class="project-desc">Interactive visual dashboard</span>
-      </a>
-
     </div>
+
   </div>
-</div>
 
 </section>
 
@@ -253,4 +278,3 @@ function toggle(card){
 
 </body>
 </html>
-```
