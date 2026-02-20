@@ -2,14 +2,20 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio | Laila Mukhrina Azizi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Laila Mukhrina Azizi | Data Analyst Portfolio</title>
+
+<meta name="description" content="Portfolio Laila Mukhrina Azizi — Data Analyst & Data Scientist dengan pengalaman Python, SQL, Excel, dan Tableau.">
 
 <style>
-/* ================= BASE ================= */
+
+/* ===== BASE ===== */
 body {
   margin: 0;
   background: #fff1e8;
   font-family: Georgia, serif;
+  color: #222;
 }
 
 .section {
@@ -18,7 +24,24 @@ body {
   padding: 60px 20px;
 }
 
-/* ================= GRID DESKTOP ================= */
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 16px;
+  opacity: .8;
+}
+
+/* ===== GRID ===== */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -32,7 +55,7 @@ body {
   gap: 30px;
 }
 
-/* ================= CARD ================= */
+/* ===== CARD ===== */
 .card {
   height: 300px;
   border-radius: 28px;
@@ -42,6 +65,11 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: transform .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .overlay {
@@ -58,16 +86,10 @@ body {
   transition: 0.35s ease;
 }
 
-.card.active .overlay {
-  opacity: 1;
-}
+.card.active .overlay { opacity: 1; }
+.hello .overlay { opacity: 1; cursor: default; }
 
-.hello .overlay {
-  opacity: 1;
-  cursor: default;
-}
-
-/* ================= ICON ================= */
+/* ===== ICON ===== */
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -80,21 +102,18 @@ body {
   height: 82px;
   object-fit: contain;
   transition: 0.25s ease;
-  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.25));
 }
 
-.icon-grid img:hover {
-  transform: scale(1.12);
-}
+.icon-grid img:hover { transform: scale(1.12); }
 
-/* ================= PROJECT (FIX SIZE) ================= */
+/* ===== PROJECT ===== */
 .project-grid {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 14px;
   width: 100%;
-  max-width: 260px; /* biar tidak terlalu lebar */
+  max-width: 260px;
 }
 
 .project-item {
@@ -106,9 +125,6 @@ body {
   font-weight: 600;
   box-shadow: 2px 2px 0 #000;
   transition: 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
   font-size: 14px;
 }
 
@@ -122,36 +138,43 @@ body {
   font-weight: normal;
 }
 
-.project-status {
-  font-size: 11px;
-  opacity: 0.7;
+/* ===== ABOUT ===== */
+.about {
+  text-align: center;
+  max-width: 700px;
+  margin: 60px auto 20px;
+  line-height: 1.6;
 }
 
-/* ================= TABLET ================= */
-@media (max-width: 1024px) {
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    height: 280px;
-  }
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-block;
+  margin-top: 18px;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: .25s;
 }
 
-/* ================= MOBILE FINAL ================= */
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: .9;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  opacity: .7;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
 
-  .section {
-    padding: 40px 16px;
-  }
-
-  /* ubah semua grid jadi stack */
-  .grid-3,
-  .grid-2 {
+  .grid-3, .grid-2 {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -160,11 +183,6 @@ body {
   .card {
     height: auto;
     min-height: 230px;
-    border-radius: 22px;
-  }
-
-  .overlay {
-    padding: 22px 18px;
   }
 
   .icon-grid img {
@@ -172,22 +190,9 @@ body {
     height: 90px;
   }
 
-  .project-grid {
-    max-width: 100%;
-  }
-
-  /* center hello */
-  .hello .overlay {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  h2 { font-size: 22px; }
-  h3 { font-size: 18px; }
-  p { font-size: 14px; }
+  .project-grid { max-width: 100%; }
 }
-  
+
 </style>
 </head>
 
@@ -195,46 +200,45 @@ body {
 
 <section class="section">
 
-  <!-- ===== ROW 1 ===== -->
+  <div class="header">
+    <h1>Laila Mukhrina Azizi</h1>
+    <p>Data Analyst • Data Scientist</p>
+  </div>
+
+  <!-- GRID TOP -->
   <div class="grid-3">
 
-    <!-- PROFILE -->
-    <div class="card order-2" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
+    <div class="card" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
       <div class="overlay">
-        <h3>Laila Mukhrina Azizi</h3>
-        <p>Lulusan Statistika dengan minat kuat pada<br>Data Analyst dan Data Scientist</p>
+        <h3>About Me</h3>
+        <p>Lulusan Statistika dengan minat pada analisis data, machine learning, dan data visualization.</p>
       </div>
     </div>
 
-    <!-- HELLO -->
-    <div class="card hello order-1" style="background-image:url('Card 1.jpg')">
+    <div class="card hello" style="background-image:url('Card 1.jpg')">
       <div class="overlay">
         <h2>Hello 👋</h2>
         <h3>I'm Laila Mukhrina Azizi</h3>
       </div>
     </div>
 
-    <!-- SOCIAL -->
-    <div class="card order-3" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
+    <div class="card" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Social Media</h3>
         <div class="icon-grid">
           <a href="https://linkedin.com/in/laila-mukhrina-azizi" target="_blank"><img src="linkedin.png"></a>
           <a href="https://github.com/lailamukhrinaamadh-wq" target="_blank"><img src="github.png"></a>
           <a href="https://instagram.com/laila_mukhrina_azizi" target="_blank"><img src="instagram.jpg"></a>
-          <a href="https://www.youtube.com/@lailamukhrinaazizi9279" target="_blank"><img src="YT.png"></a>
-          <a href="https://www.tiktok.com/@stxrrinnn" target="_blank"><img src="Tiktok.jpg"></a>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- ===== ROW 2 ===== -->
+  <!-- GRID BOTTOM -->
   <div class="grid-2">
 
-    <!-- TOOLS -->
-    <div class="card order-4" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
+    <div class="card" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Tools</h3>
         <div class="icon-grid">
@@ -248,33 +252,45 @@ body {
       </div>
     </div>
 
-    <!-- PROJECT -->
-    <div class="card order-5" style="background-image:url('Project.jpg')" onclick="toggle(this)">
+    <div class="card" style="background-image:url('Project.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Projects</h3>
 
         <div class="project-grid">
-
           <a href="https://docs.google.com/spreadsheets/d/1stkiLDjiWF14rFneueKss5zTbByvVkNNM_Kf84YT-Kc/edit?usp=sharing" target="_blank" class="project-item">
             📊 Excel Dashboard
-            <span class="project-desc">Interactive sales & data report</span>
+            <div class="project-desc">Interactive sales report</div>
           </a>
 
           <div class="project-item">
             🧠 Python Research Project
-            <span class="project-desc">Tomato Leaf Disease Detection</span>
-            <span class="project-status">Status: Under Review</span>
+            <div class="project-desc">Tomato Leaf Disease Detection (Under Review)</div>
           </div>
 
-          <a href="https://public.tableau.com/views/IndikatorKemiskinankita/Story1?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link" target="_blank" class="project-item">
+          <a href="https://public.tableau.com/" target="_blank" class="project-item">
             📈 Tableau Visualization
-            <span class="project-desc">Interactive visual dashboard</span>
+            <div class="project-desc">Interactive dashboard</div>
           </a>
-
         </div>
+
       </div>
     </div>
 
+  </div>
+
+  <!-- ABOUT TEXT -->
+  <div class="about">
+    Saya tertarik membangun insight dari data untuk membantu pengambilan keputusan.  
+    Memiliki pengalaman menggunakan Python, SQL, Excel, dan Tableau dalam proyek analisis data dan penelitian.
+    
+    <br>
+    <a href="https://drive.google.com/file/d/1NY__33f_8xjE1wKWtP323LvbTZgO--3V/view?usp=sharing" target="_blank" class="btn-cv">
+  📄 View CV
+</a>
+  </div>
+
+  <div class="footer">
+    © 2026 Laila Mukhrina Azizi
   </div>
 
 </section>
