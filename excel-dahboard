@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sales Dashboard Analysis | Laila Mukhrina Azizi</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Georgia, serif;
+  background:#fff1e8;
+  color:#222;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+h1{ margin-bottom:10px; }
+h2{ margin-top:30px; }
+
+p{
+  line-height:1.7;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 18px;
+  background:#000;
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+}
+
+.back{
+  margin-top:40px;
+  display:block;
+  opacity:.7;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Sales Dashboard Analysis (Excel)</h1>
+<p>Dashboard analisis penjualan yang dibuat menggunakan Microsoft Excel untuk mengevaluasi performa bisnis dan mengubah data transaksi menjadi insight yang mudah dipahami.</p>
+
+<h2>Objectives</h2>
+<p>
+• Menganalisis tren penjualan dari waktu ke waktu<br>
+• Mengidentifikasi produk dengan kontribusi revenue terbesar<br>
+• Memahami perilaku pembelian pelanggan<br>
+• Mengevaluasi kepuasan pelanggan
+</p>
+
+<h2>Dataset</h2>
+<p>
+Customer Name<br>
+Product Name<br>
+Quantity<br>
+Total Sales<br>
+Rating<br>
+Sales Date (Monthly)
+</p>
+
+<h2>Key Metrics</h2>
+<p>
+Total Sales<br>
+Average Quantity per Transaction<br>
+Sales by Month<br>
+Top Products by Revenue<br>
+Customer Contribution
+</p>
+
+<h2>Insights</h2>
+<p>
+Dashboard menunjukkan pola pembelian pelanggan dan performa produk.
+Beberapa produk memiliki kontribusi revenue yang lebih dominan, serta terdapat variasi perilaku pembelian antar periode.
+Insight ini dapat digunakan untuk strategi penjualan dan perencanaan stok.
+</p>
+
+<h2>Tools</h2>
+<p>
+Microsoft Excel<br>
+Pivot Tables<br>
+Pivot Charts<br>
+Data Cleaning<br>
+Dashboard Design
+</p>
+
+<a href="https://docs.google.com/spreadsheets/d/1stkiLDjiWF14rFneueKss5zTbByvVkNNM_Kf84YT-Kc/edit?usp=sharing" target="_blank" class="btn">
+🔗 View Spreadsheet
+</a>
+
+<a href="index.html" class="back">← Back to Portfolio</a>
+
+</div>
+
+</body>
+</html>
