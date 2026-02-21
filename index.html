@@ -147,34 +147,6 @@ body {
 }
 
 /* ===== BUTTON ===== */
-.btn-cv{
-  display:block;
-  width:max-content;
-  margin:20px auto;   /* ini yang bikin dia ke tengah */
-  padding:10px 18px;
-  background:#000;
-  color:#fff;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  transition:.2s;
-}
-
-.btn-cv:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 14px rgba(0,0,0,.15);
-}
-
-/* ===== CTA ===== */
-.cta{
-  text-align:center;
-  margin-top:12px;
-  font-size:14px;
-  font-weight:500;
-  letter-spacing:.4px;
-  opacity:.85;
-}
-
 .contact{
   text-align:center;
   margin-top:28px;
@@ -218,7 +190,11 @@ body {
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-
+  .order-1 { order: 1; }
+  .order-2 { order: 2; }
+  .order-3 { order: 3; }
+  .order-4 { order: 4; }
+  .order-5 { order: 5; }
   .grid-3, .grid-2 {
     display: flex;
     flex-direction: column;
@@ -247,45 +223,47 @@ body {
 
   <div class="header">
     <h1>Laila Mukhrina Azizi</h1>
-    <p>Data Analyst • Data Scientist</p>
+    <p>Open to Data Analyst / Data Scientist opportunities</p>
   </div>
 
   <!-- GRID TOP -->
-  <div class="grid-3">
+<div class="grid-3">
 
-    <div class="card" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
-      <div class="overlay">
-        <h3>About Me</h3>
-        <p> Saya tertarik membangun insight dari data untuk membantu pengambilan keputusan.Memiliki pengalaman menggunakan Python, SQL, Excel, dan Tableau dalam proyek analisis data dan penelitian.</p>
-      </div>
+  <!-- ABOUT -->
+  <div class="card order-2" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
+    <div class="overlay">
+      <h3>About Me</h3>
+      <p>Saya tertarik membangun insight dari data untuk membantu pengambilan keputusan. Memiliki pengalaman menggunakan Python, SQL, Excel, dan Tableau dalam proyek analisis data dan penelitian.</p>
     </div>
+  </div>
 
-    <div class="card hello" style="background-image:url('Card 1.jpg')">
-      <div class="overlay">
-        <h2>Hello 👋</h2>
-        <h3>I'm Laila Mukhrina Azizi</h3>
-      </div>
+  <!-- HELLO -->
+  <div class="card hello order-1" style="background-image:url('Card 1.jpg')">
+    <div class="overlay">
+      <h2>Hello 👋</h2>
+      <h3>I'm Laila Mukhrina Azizi</h3>
     </div>
+  </div>
 
-    <div class="card" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
-      <div class="overlay">
-        <h3>Social Media</h3>
-        <div class="icon-grid">
+  <!-- SOCIAL -->
+  <div class="card order-3" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
+    <div class="overlay">
+      <h3>Social Media</h3>
+      <div class="icon-grid">
         <a href="https://linkedin.com/in/laila-mukhrina-azizi" target="_blank"><img src="linkedin.png"></a>
         <a href="https://github.com/lailamukhrinaamadh-wq" target="_blank"><img src="github.png"></a> 
         <a href="https://instagram.com/laila_mukhrina_azizi" target="_blank"><img src="instagram.jpg"></a> 
         <a href="https://www.youtube.com/@lailamukhrinaazizi9279" target="_blank"><img src="YT.png"></a>
         <a href="https://www.tiktok.com/@stxrrinnn" target="_blank"><img src="Tiktok.jpg"></a>
-        </div>
       </div>
     </div>
-
   </div>
 
-  <!-- GRID BOTTOM -->
-  <div class="grid-2">
+</div>
 
-    <div class="card" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
+  <!-- GRID BOTTOM -->
+
+    <div class="card order-4" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Tools</h3>
         <div class="icon-grid">
@@ -299,7 +277,7 @@ body {
       </div>
     </div>
 
-    <div class="card" style="background-image:url('Project.jpg')" onclick="toggle(this)">
+    <div class="card order-5" style="background-image:url('Project.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Projects</h3>
 
@@ -326,14 +304,6 @@ body {
   </div>
     
     <br>
-  <p class="cta">
-  Open to Data Analyst / Data Science opportunities
-</p>
-
-   <a href="https://drive.google.com/file/d/1NY__33f_8xjE1wKWtP323LvbTZgO--3V/view?usp=sharing" target="_blank" class="btn-cv">
-  📄 View CV
-</a>
-  
   <div class="contact">
   <h3>Contact Me</h3>
 
