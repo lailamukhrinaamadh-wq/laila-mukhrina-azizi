@@ -1,5 +1,242 @@
-<!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Laila Mukhrina Azizi | Data Analyst Portfolio</title> <meta name="description" content="Portfolio Laila Mukhrina Azizi — Data Analyst & Data Scientist dengan pengalaman Python, SQL, Excel, dan Tableau."> <style> /* ===== BASE ===== */ body { margin: 0; background: #fff1e8; font-family: Georgia, serif; color: #222; } .section { max-width: 1200px; margin: auto; padding: 60px 20px; } /* ===== HEADER ===== */ .header { text-align: center; margin-bottom: 30px; } .header h1 { margin: 0; font-size: 34px; } .header p { margin-top: 6px; font-size: 16px; opacity: .8; } /* ===== GRID ===== */ .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; } .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; } /* ===== CARD ===== */ .card { height: 300px; border-radius: 28px; box-shadow: 6px 6px 0 #000; background-size: cover; background-position: center; position: relative; overflow: hidden; cursor: pointer; transition: transform .25s ease; } .card:hover { transform: translateY(-4px); } .overlay { position: absolute; inset: 0; background: rgba(255, 228, 214, 0.92); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 26px; opacity: 0; transition: 0.35s ease; } .card.active .overlay { opacity: 1; } .hello .overlay { opacity: 1; cursor: default; } /* ===== ICON ===== */ .icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 14px; } .icon-grid img { width: 82px; height: 82px; object-fit: contain; transition: 0.25s ease; } .icon-grid img:hover { transform: scale(1.12); } /* ===== PROJECT ===== */ .project-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; width: 100%; max-width: 260px; } .project-item { background: #fff; padding: 10px 12px; border-radius: 12px; text-decoration: none; color: #000; font-weight: 600; box-shadow: 2px 2px 0 #000; transition: 0.25s ease; font-size: 14px; } .project-item:hover { background: #ffe3d3; transform: translateY(-2px); } .project-desc { font-size: 12px; font-weight: normal; } /* ===== ABOUT ===== */ .about { text-align: center; max-width: 700px; margin: 60px auto 20px; line-height: 1.6; } /* ===== BUTTON ===== */ .btn-cv{ display:block; width:max-content; margin:20px auto; /* ini yang bikin dia ke tengah */ padding:10px 18px; background:#000; color:#fff; border-radius:10px; text-decoration:none; font-weight:600; transition:.2s; } .btn-cv:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.15); } /* ===== CTA ===== */ .cta{ text-align:center; margin-top:12px; font-size:14px; font-weight:500; letter-spacing:.4px; opacity:.85; } .contact{ text-align:center; margin-top:28px; } .contact h3{ margin-bottom:14px; font-size:18px; } .contact-buttons{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; } .btn-contact{ padding:10px 18px; background:#000; color:#fff; border-radius:10px; text-decoration:none; font-weight:600; font-size:14px; transition:.2s; } .btn-contact:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.15); } /* ===== FOOTER ===== */ .footer { text-align: center; margin-top: 50px; font-size: 14px; opacity: .7; } /* ===== MOBILE ===== */ @media (max-width: 768px) { .grid-3, .grid-2 { display: flex; flex-direction: column; gap: 20px; } .card { height: auto; min-height: 230px; } .icon-grid img { width: 90px; height: 90px; } .project-grid { max-width: 100%; } }
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Laila Mukhrina Azizi | Data Analyst Portfolio</title>
+
+<meta name="description" content="Portfolio Laila Mukhrina Azizi — Data Analyst & Data Scientist dengan pengalaman Python, SQL, Excel, dan Tableau.">
+
+<style>
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  background: #fff1e8;
+  font-family: Georgia, serif;
+  color: #222;
+}
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 16px;
+  opacity: .8;
+}
+
+/* ===== GRID ===== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* ===== CARD ===== */
+.card {
+  height: 300px;
+  border-radius: 28px;
+  box-shadow: 6px 6px 0 #000;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 228, 214, 0.92);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 26px;
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.card.active .overlay { opacity: 1; }
+.hello .overlay { opacity: 1; cursor: default; }
+
+/* ===== ICON ===== */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.icon-grid img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  transition: 0.25s ease;
+}
+
+.icon-grid img:hover { transform: scale(1.12); }
+
+/* ===== PROJECT ===== */
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.project-item {
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 2px 2px 0 #000;
+  transition: 0.25s ease;
+  font-size: 14px;
+}
+
+.project-item:hover {
+  background: #ffe3d3;
+  transform: translateY(-2px);
+}
+
+.project-desc {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* ===== ABOUT ===== */
+.about {
+  text-align: center;
+  max-width: 700px;
+  margin: 60px auto 20px;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.btn-cv{
+  display:block;
+  width:max-content;
+  margin:20px auto;   /* ini yang bikin dia ke tengah */
+  padding:10px 18px;
+  background:#000;
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.2s;
+}
+
+.btn-cv:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 14px rgba(0,0,0,.15);
+}
+
+/* ===== CTA ===== */
+.cta{
+  text-align:center;
+  margin-top:12px;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.4px;
+  opacity:.85;
+}
+
+.contact{
+  text-align:center;
+  margin-top:28px;
+}
+
+.contact h3{
+  margin-bottom:14px;
+  font-size:18px;
+}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn-contact{
+  padding:10px 18px;
+  background:#000;
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  transition:.2s;
+}
+
+.btn-contact:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 14px rgba(0,0,0,.15);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  opacity: .7;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .grid-3, .grid-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    height: auto;
+    min-height: 230px;
+  }
+
+  .icon-grid img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .project-grid { max-width: 100%; }
+}
 
 </style>
 </head>
@@ -8,49 +245,43 @@
 
 <section class="section">
 
-  <div class="header">
-    <h1>Laila Mukhrina Azizi</h1>
-    <p>Open to Data Analyst / Data Scientist opportunities</p>
-  </div>
-
   <!-- GRID TOP -->
-<div class="grid-3">
+  <div class="grid-3">
 
-  <!-- ABOUT -->
-  <div class="card order-2" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
-    <div class="overlay">
-      <h3>About Me</h3>
-      <p>Saya tertarik membangun insight dari data untuk membantu pengambilan keputusan. Memiliki pengalaman menggunakan Python, SQL, Excel, dan Tableau dalam proyek analisis data dan penelitian.</p>
+    <div class="card" style="background-image:url('Ayin.jpeg')" onclick="toggle(this)">
+      <div class="overlay">
+        <h3>About Me</h3>
+        <p> Saya tertarik membangun insight dari data untuk membantu pengambilan keputusan.Memiliki pengalaman menggunakan Python, SQL, Excel, dan Tableau dalam proyek analisis data dan penelitian.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- HELLO -->
-  <div class="card hello order-1" style="background-image:url('Card 1.jpg')">
-    <div class="overlay">
-      <h2>Hello 👋</h2>
-      <h3>I'm Laila Mukhrina Azizi</h3>
+    <div class="card hello" style="background-image:url('Card 1.jpg')">
+      <div class="overlay">
+        <h2>Hello 👋</h2>
+        <h3>I'm Laila Mukhrina Azizi</h3>
+        <h4>Open to Data Analyst / Data Science opportunities</h4>
+      </div>
     </div>
-  </div>
 
-  <!-- SOCIAL -->
-  <div class="card order-3" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
-    <div class="overlay">
-      <h3>Social Media</h3>
-      <div class="icon-grid">
+    <div class="card" style="background-image:url('Sosial Media.jpg')" onclick="toggle(this)">
+      <div class="overlay">
+        <h3>Social Media</h3>
+        <div class="icon-grid">
         <a href="https://linkedin.com/in/laila-mukhrina-azizi" target="_blank"><img src="linkedin.png"></a>
         <a href="https://github.com/lailamukhrinaamadh-wq" target="_blank"><img src="github.png"></a> 
         <a href="https://instagram.com/laila_mukhrina_azizi" target="_blank"><img src="instagram.jpg"></a> 
         <a href="https://www.youtube.com/@lailamukhrinaazizi9279" target="_blank"><img src="YT.png"></a>
         <a href="https://www.tiktok.com/@stxrrinnn" target="_blank"><img src="Tiktok.jpg"></a>
+        </div>
       </div>
     </div>
+
   </div>
 
-</div>
-
   <!-- GRID BOTTOM -->
+  <div class="grid-2">
 
-    <div class="card order-4" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
+    <div class="card" style="background-image:url('Tools.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Tools</h3>
         <div class="icon-grid">
@@ -64,7 +295,7 @@
       </div>
     </div>
 
-    <div class="card order-5" style="background-image:url('Project.jpg')" onclick="toggle(this)">
+    <div class="card" style="background-image:url('Project.jpg')" onclick="toggle(this)">
       <div class="overlay">
         <h3>Projects</h3>
 
@@ -90,7 +321,7 @@
 
   </div>
     
-    <br>
+  
   <div class="contact">
   <h3>Contact Me</h3>
 
@@ -123,4 +354,4 @@ function toggle(card){
 </script>
 
 </body>
-</html>
+</html> 
