@@ -7,6 +7,7 @@
 
 <style>
 
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: Georgia, serif;
@@ -15,54 +16,77 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   padding: 50px 20px;
 }
 
-/* FOTO ATAS */
-.profile {
-  text-align: center;
-  margin-bottom: 30px;
+/* ===== ABOUT SECTION ===== */
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 70px;
 }
 
 .profile img {
-  width: 180px;
-  height: 180px;
+  width: 260px;
+  height: 260px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 4px 4px 0 #000;
+  box-shadow: 6px 6px 0 #000;
+  animation: slideInLeft 1s ease;
 }
 
-/* ABOUT TEXT */
 .about-text {
-  text-align: center;
+  max-width: 520px;
+  animation: slideInRight 1s ease;
+}
+
+.typing {
+  font-size: 32px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-right: 3px solid #000;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 2.5s steps(20, end) forwards, blink .7s infinite;
+}
+
+.about-text p {
   line-height: 1.6;
-  margin-bottom: 50px;
 }
 
-/* SECTION TITLE */
+/* ===== SECTION TITLE ===== */
 .section-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 26px;
   text-align: center;
+  margin-bottom: 25px;
 }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 50px;
+  gap: 22px;
+  margin-bottom: 60px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .card {
   background: #fff;
   border-radius: 16px;
   padding: 16px;
   box-shadow: 4px 4px 0 #000;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: .6s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card img {
@@ -79,7 +103,45 @@ body {
 
 .card p {
   font-size: 14px;
-  opacity: .8;
+  opacity: .85;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .typing {
+    font-size: 26px;
+  }
+
 }
 
 </style>
@@ -89,22 +151,23 @@ body {
 
 <div class="container">
 
-  <!-- FOTO -->
-  <div class="profile">
-    <img src="Lela.jpeg" alt="Foto Laila">
+  <!-- ===== ABOUT ===== -->
+  <div class="about-wrapper">
+    <div class="profile">
+      <img src="Lela.jpeg" alt="Foto Laila">
+    </div>
+
+    <div class="about-text">
+      <h2 class="typing">About Me</h2>
+      <p>
+        Saya adalah Data Analyst dan Data Scientist yang tertarik mengolah data menjadi insight
+        untuk mendukung pengambilan keputusan. Memiliki pengalaman menggunakan Python, SQL,
+        Excel, dan Tableau dalam proyek analisis data dan penelitian.
+      </p>
+    </div>
   </div>
 
-  <!-- ABOUT -->
-  <div class="about-text">
-    <h2>About Me</h2>
-    <p>
-      Saya adalah Data Analyst dan Data Scientist yang tertarik mengolah data menjadi insight
-      untuk mendukung pengambilan keputusan. Memiliki pengalaman menggunakan Python, SQL,
-      Excel, dan Tableau dalam proyek analisis data dan penelitian.
-    </p>
-  </div>
-
-  <!-- PENGALAMAN KERJA -->
+  <!-- ===== PENGALAMAN KERJA ===== -->
   <h3 class="section-title">Pengalaman Kerja</h3>
 
   <div class="grid">
@@ -113,7 +176,7 @@ body {
       <img src="kerja1.jpg">
       <h4>Data Analyst Intern</h4>
       <p>Perusahaan XYZ</p>
-      <p>Menganalisis data penjualan dan membuat dashboard.</p>
+      <p>Menganalisis data penjualan dan membuat dashboard interaktif.</p>
     </div>
 
     <div class="card">
@@ -125,7 +188,7 @@ body {
 
   </div>
 
-  <!-- PENGALAMAN ORGANISASI -->
+  <!-- ===== PENGALAMAN ORGANISASI ===== -->
   <h3 class="section-title">Pengalaman Organisasi</h3>
 
   <div class="grid">
@@ -141,12 +204,27 @@ body {
       <img src="org2.jpg">
       <h4>Panitia Event</h4>
       <p>Seminar Nasional</p>
-      <p>Mengatur registrasi peserta dan dokumentasi.</p>
+      <p>Mengatur registrasi peserta dan dokumentasi acara.</p>
     </div>
 
   </div>
 
 </div>
+
+<script>
+/* ===== SCROLL ANIMATION ===== */
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>
