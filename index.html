@@ -237,6 +237,42 @@ body {
   opacity: .7;
 }
 
+/* ===== HELLO CARD FIX ===== */
+
+.hello{
+  background: #fff;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.hello .overlay{
+  opacity: 1;
+  cursor: default;
+  background: rgba(255, 228, 214, 0.95);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:8px;
+}
+
+.hello-icon{
+  width:120px;
+  margin-bottom:6px;
+}
+
+.hello-text{
+  font-family:'Beauty', serif;
+  font-size:32px;
+  margin:0;
+}
+
+.hello-name{
+  margin:0;
+  font-size:18px;
+  font-weight:600;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
 
@@ -276,12 +312,12 @@ body {
         </div>
       </div>
 
-    <div class="card hello" style="background-image:url('Card 1.jpg')">
-      <div class="overlay">
-        <h2 class="hello-text">Hello 👋</h2>
-        <h3>I'm Laila Mukhrina Azizi</h3>
+      <div class="card hello">
+        <div class="overlay">
+          <img src="Ay.png" alt="icon" class="hello-icon">
+          <h2 class="hello-text">Hello, I'm Laila Mukhrina Azizi 👋</h2>
+        </div>
       </div>
-    </div>
 
     <div class="card" style="background-image:url('sosialmedia1.jfif')" onclick="toggle(this)">
       <div class="overlay">
