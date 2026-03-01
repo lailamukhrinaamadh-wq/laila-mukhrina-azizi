@@ -233,6 +233,22 @@ body{
   font-weight:600; 
 }
 
+#toolsModal .social-icons{
+  display:grid;
+  grid-template-columns:repeat(3,60px);
+  justify-content:center;
+  gap:18px;
+}
+
+#toolsModal img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  background:#1f2a36;
+  padding:10px;
+  border-radius:12px;
+}
+
 /* ===== MOBILE ===== */
 @media(max-width:768px){
   .grid-3,.grid-2{
@@ -277,19 +293,12 @@ body{
 <!-- GRID BAWAH -->
 <div class="grid-2">
 
-  <div class="card" style="background-image:url('tools2.jfif')" onclick="toggle(this)">
-    <div class="overlay">
-      <h3>Tools</h3>
-      <div class="icon-grid">
-        <img src="python.jpg">
-        <img src="excel.jpg">
-        <img src="SQL.jpg">
-        <img src="TABLEAU1.png">
-        <img src="power bi.jpg">
-        <img src="R.jpg">
+    <div class="card" style="background-image:url('tools2.jfif')" onclick="openToolsModal()">
+      <div class="overlay">
+        <h3>Tools</h3>
+        <p>Klik untuk melihat</p>
       </div>
     </div>
-  </div>
 
   <div class="card" style="background-image:url('Project2.jfif')" onclick="toggle(this)">
     <div class="overlay">
@@ -325,6 +334,23 @@ body{
   </div>
 </div>
 
+<div class="social-modal" id="toolsModal">
+  <div class="social-box">
+    <h2>Tools</h2>
+
+    <div class="social-icons">
+      <img src="python.jpg">
+      <img src="excel.jpg">
+      <img src="SQL.jpg">
+      <img src="TABLEAU1.png">
+      <img src="power bi.jpg">
+      <img src="R.jpg">
+    </div>
+
+    <button onclick="closeToolsModal()">Close</button>
+  </div>
+</div>
+
 <script>
 function toggle(card){
   card.classList.toggle("active");
@@ -336,6 +362,14 @@ function openModal(){
 
 function closeModal(){
   document.getElementById("socialModal").classList.remove("active");
+}
+
+function openToolsModal(){
+  document.getElementById("toolsModal").classList.add("active");
+}
+
+function closeToolsModal(){
+  document.getElementById("toolsModal").classList.remove("active");
 }
 </script>
 
