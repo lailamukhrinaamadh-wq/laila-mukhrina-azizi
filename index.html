@@ -3,379 +3,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Laila Mukhrina Azizi | Portfolio</title>
-
-<meta name="description" content="Portfolio Laila Mukhrina Azizi — Data Analyst & Data Scientist dengan pengalaman Python, SQL, Excel, dan Tableau.">
 
 <style>
 
-/* ===== LOAD FONT ===== */
-@font-face {
-  font-family: 'Beauty';
-  src: url('BeautyDemo.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* ===== BASE ===== */
-body {
-  margin: 0;
-  background: #fff1e8;
-  font-family: Georgia, serif;
-  color: #222;
+body{
+  margin:0;
+  background:#fff1e8;
+  font-family:Georgia, serif;
+  color:#222;
 }
 
-.section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-/* ===== HELLO FONT ===== */
-.hello-text {
-  font-family: 'Georgia', serif;
-}
-
-.section {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
-  font-size: 18px;
-}
-
-  
-/* ===== HEADER ===== */
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 34px;
-}
-
-.header p {
-  margin-top: 6px;
-  font-size: 16px;
-  opacity: .8;
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
 }
 
 /* ===== GRID ===== */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 40px;
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-bottom:40px;
 }
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+  margin-bottom:40px;
 }
 
 /* ===== CARD ===== */
-.card {
-  height: 300px;
-  border-radius: 28px;
-  box-shadow: 6px 6px 0 #000;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform .25s ease;
+.card{
+  height:300px;
+  border-radius:28px;
+  box-shadow:6px 6px 0 #000;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.3s;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.card:hover{
+  transform:translateY(-4px);
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 228, 214, 0.92);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 26px;
-  opacity: 0;
-  transition: 0.35s ease;
-}
-
-.card.active .overlay { opacity: 1; }
-.hello .overlay { opacity: 1; cursor: default; }
-
-/* ===== ICON ===== */
-.icon-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 14px;
-}
-
-.icon-grid img {
-  width: 82px;
-  height: 82px;
-  object-fit: contain;
-  transition: 0.25s ease;
-}
-
-.icon-grid img:hover { transform: scale(1.12); }
-
-/* ===== PROJECT ===== */
-.project-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 14px;
-  width: 100%;
-  max-width: 260px;
-}
-
-.project-item {
-  background: #fff;
-  padding: 10px 12px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
-  box-shadow: 2px 2px 0 #000;
-  transition: 0.25s ease;
-  font-size: 14px;
-}
-
-.project-item:hover {
-  background: #ffe3d3;
-  transform: translateY(-2px);
-}
-
-.project-desc {
-  font-size: 12px;
-  font-weight: normal;
-}
-
-/* ===== ABOUT ===== */
-.about {
-  text-align: center;
-  max-width: 700px;
-  margin: 60px auto 20px;
-  line-height: 1.6;
-}
-
-/* ===== BUTTON ===== */
-.btn-cv{
-  display:block;
-  width:max-content;
-  margin:20px auto;   /* ini yang bikin dia ke tengah */
-  padding:10px 18px;
-  background:#000;
-  color:#fff;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  transition:.2s;
-}
-
-.btn-cv:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 14px rgba(0,0,0,.15);
-}
-
-/* ===== CTA ===== */
-.cta{
-  text-align:center;
-  margin-top:12px;
-  font-size:14px;
-  font-weight:500;
-  letter-spacing:.4px;
-  opacity:.85;
-}
-
-.contact{
-  text-align:center;
-  margin-top:28px;
-}
-
-.contact h3{
-  margin-bottom:14px;
-  font-size:18px;
-}
-
-.contact-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.btn-contact{
-  padding:10px 18px;
-  background:#000;
-  color:#fff;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  transition:.2s;
-}
-
-.btn-contact:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 14px rgba(0,0,0,.15);
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 14px;
-  opacity: .7;
-}
-
-/* ===== HELLO CARD FIX ===== */
-
-.hello{
-  background: #fff;
-  box-shadow: 6px 6px 0 #000;
-}
-
-.hello .overlay{
-  opacity: 1;
-  cursor: default;
-  background: rgba(255, 228, 214, 0.95);
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(255,228,214,.92);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  gap:8px;
+  padding:26px;
+  opacity:0;
+  transition:.35s;
 }
 
-.hello-icon{
-  width:120px;
-  margin-bottom:6px;
+.card.active .overlay{
+  opacity:1;
 }
 
-.hello-text{
-  font-family:'Georgia', serif;
-  font-size:20px;
-  margin:0;
+.hello .overlay{
+  opacity:1;
+  cursor:default;
 }
 
-.hello-name{
-  margin:0;
-  font-size:18px;
+/* ===== ICON GRID ===== */
+.icon-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:14px;
+}
+
+.icon-grid img{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+  transition:.25s;
+}
+
+.icon-grid img:hover{
+  transform:scale(1.12);
+}
+
+/* ===== PROJECT ===== */
+.project-grid{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
+  width:100%;
+  max-width:260px;
+}
+
+.project-item{
+  background:#fff;
+  padding:10px 12px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#000;
   font-weight:600;
+  box-shadow:2px 2px 0 #000;
+  transition:.25s;
+  font-size:14px;
+}
+
+.project-item:hover{
+  background:#ffe3d3;
+  transform:translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;
+  margin-top:40px;
+  font-size:14px;
+  opacity:.7;
 }
 
 /* ===== MODAL ===== */
-
 .social-modal{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.4s ease;
-  z-index: 999;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(8px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+  z-index:999;
 }
 
 .social-modal.active{
-  opacity: 1;
-  visibility: visible;
+  opacity:1;
+  visibility:visible;
 }
 
 .social-box{
-  background: #121a22;
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  animation: pop 0.4s ease;
-}
-
-@keyframes pop{
-  from{ transform: scale(0.7); opacity: 0; }
-  to{ transform: scale(1); opacity: 1; }
+  background:#121a22;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
 }
 
 .social-box h2{
-  margin-bottom: 25px;
-  color: #fff;
+  color:#fff;
+  margin-bottom:25px;
 }
 
 .social-icons{
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  margin-bottom: 25px;
+  display:flex;
+  gap:25px;
+  justify-content:center;
+  margin-bottom:25px;
 }
 
 .social-icons a{
-  width: 60px;
-  height: 60px;
-  background: #1f2a36;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
+  width:60px;
+  height:60px;
+  background:#1f2a36;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
 }
 
 .social-icons a:hover{
-  transform: translateY(-8px);
-  background: linear-gradient(135deg,#7c5cff,#00d4ff);
+  transform:translateY(-6px);
+  background:linear-gradient(135deg,#7c5cff,#00d4ff);
 }
 
 .social-icons img{
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+  width:30px;
+  height:30px;
+  object-fit:contain;
 }
 
 .social-box button{
-  padding: 10px 25px;
-  border: none;
-  border-radius: 10px;
-  background: #7c5cff;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+  padding:10px 25px;
+  border:none;
+  border-radius:10px;
+  background:#7c5cff;
+  color:#fff;
+  cursor:pointer;
 }
 
-.social-box button:hover{
-  background: #00d4ff;
-}
-  
 /* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-  .grid-3, .grid-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+@media(max-width:768px){
+  .grid-3,.grid-2{
+    display:flex;
+    flex-direction:column;
   }
-
-  .card {
-    height: auto;
-    min-height: 230px;
-  }
-
-  .icon-grid img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .project-grid { max-width: 100%; }
 }
 
 </style>
@@ -385,111 +216,87 @@ body {
 
 <section class="section">
 
-  <!-- GRID TOP -->
-  <div class="grid-3">
+<!-- GRID ATAS -->
+<div class="grid-3">
 
-      <div class="card about-card" style="background-image:url('Ayin.jpeg')" onclick="window.location.href='about.html'">
-        <div class="overlay">
-          <h3>About Me</h3>
-          <p>Saya tertarik membangun insight dari data untuk membantu pengambilan keputusan.</p>
-        </div>
-      </div>
+  <div class="card" style="background-image:url('Ayin.jpeg')" onclick="window.location.href='about.html'">
+    <div class="overlay">
+      <h3>About Me</h3>
+      <p>Saya tertarik membangun insight dari data untuk membantu pengambilan keputusan.</p>
+    </div>
+  </div>
 
-      <div class="card hello">
-        <div class="overlay">
-          <img src="Ay.png" alt="icon" class="hello-icon">
-          <h2 class="hello-text">Hello, I'm Laila Mukhrina Azizi</h2>
-        </div>
-      </div>
+  <div class="card hello">
+    <div class="overlay">
+      <h2>Hello, I'm Laila Mukhrina Azizi</h2>
+    </div>
+  </div>
 
-  <!-- SOCIAL MEDIA CARD -->
   <div class="card" style="background-image:url('sosialmedia1.jfif')" onclick="openModal()">
     <div class="overlay">
       <h3>Social Media</h3>
       <p>Klik untuk melihat</p>
     </div>
   </div>
-  
-  <!-- SOCIAL MEDIA MODAL -->
-  <div class="social-modal" id="socialModal">
-    <div class="social-box">
-      <h2>Connect With Me</h2>
-  
-      <div class="social-icons">
-        <a href="https://linkedin.com/in/laila-mukhrina-azizi" target="_blank">
-          <img src="linkedin.png">
-        </a>
-        <a href="https://github.com/lailamukhrinaamadh-wq" target="_blank">
-          <img src="github.png">
-        </a>
-        <a href="https://instagram.com/laila_mukhrina_azizi" target="_blank">
-          <img src="instagram.jpg">
-        </a>
-        <a href="https://www.youtube.com/@lailamukhrinaazizi9279" target="_blank">
-          <img src="YT.png">
-        </a>
-        <a href="https://www.tiktok.com/@stxrrinnn" target="_blank">
-          <img src="Tiktok.jpg">
-        </a>
+
+</div>
+
+<!-- GRID BAWAH -->
+<div class="grid-2">
+
+  <div class="card" style="background-image:url('tools2.jfif')" onclick="toggle(this)">
+    <div class="overlay">
+      <h3>Tools</h3>
+      <div class="icon-grid">
+        <img src="python.jpg">
+        <img src="excel.jpg">
+        <img src="SQL.jpg">
+        <img src="TABLEAU1.png">
+        <img src="power bi.jpg">
+        <img src="R.jpg">
       </div>
-  
-      <button onclick="closeModal()">Close</button>
     </div>
   </div>
 
- 
-
-  <!-- GRID BOTTOM -->
-  <div class="grid-2">
-
-    <div class="card" style="background-image:url('tools2.jfif')" onclick="toggle(this)">
-      <div class="overlay">
-        <h3>Tools</h3>
-        <div class="icon-grid">
-          <img src="python.jpg">
-          <img src="excel.jpg">
-          <img src="SQL.jpg">
-          <img src="TABLEAU1.png">
-          <img src="power bi.jpg">
-          <img src="R.jpg">
-        </div>
+  <div class="card" style="background-image:url('Project2.jfif')" onclick="toggle(this)">
+    <div class="overlay">
+      <h3>Projects</h3>
+      <div class="project-grid">
+        <a href="excel-dahboard.html" class="project-item">📊 Excel Dashboard</a>
+        <a href="tableau-project.html" class="project-item">📈 Tableau Visualization</a>
+        <div class="project-item">🧠 Python Research Project</div>
       </div>
     </div>
-
-    <div class="card" style="background-image:url('Project2.jfif')" onclick="toggle(this)">
-      <div class="overlay">
-        <h3>Projects</h3>
-
-        <div class="project-grid">
-          <a href="excel-dahboard.html" class="project-item">
-            📊 Excel Dashboard
-            <div class="project-desc">Interactive sales report</div>
-          </a>
-
-          <div class="project-item">
-            🧠 Python Research Project
-            <div class="project-desc">Tomato Leaf Disease Detection (Under Review)</div>
-          </div>
-
-          <a href="tableau-project.html" class="project-item"> 
-            📈 Tableau Visualization
-            <div class="project-desc">Interactive dashboard</div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
   </div>
-    
 
-  <div class="footer">
-    © 2026 Laila Mukhrina Azizi
-  </div>
+</div>
+
+<div class="footer">
+© 2026 Laila Mukhrina Azizi
+</div>
 
 </section>
 
+<!-- MODAL -->
+<div class="social-modal" id="socialModal">
+  <div class="social-box">
+    <h2>Connect With Me</h2>
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/laila-mukhrina-azizi" target="_blank"><img src="linkedin.png"></a>
+      <a href="https://github.com/lailamukhrinaamadh-wq" target="_blank"><img src="github.png"></a>
+      <a href="https://instagram.com/laila_mukhrina_azizi" target="_blank"><img src="instagram.jpg"></a>
+      <a href="https://www.youtube.com/@lailamukhrinaazizi9279" target="_blank"><img src="YT.png"></a>
+      <a href="https://www.tiktok.com/@stxrrinnn" target="_blank"><img src="Tiktok.jpg"></a>
+    </div>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
 <script>
+function toggle(card){
+  card.classList.toggle("active");
+}
+
 function openModal(){
   document.getElementById("socialModal").classList.add("active");
 }
@@ -500,4 +307,4 @@ function closeModal(){
 </script>
 
 </body>
-</html> 
+</html>
